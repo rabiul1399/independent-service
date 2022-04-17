@@ -54,20 +54,20 @@ const Register = () => {
             <Form onSubmit={handleSubmit}>
             <Form.Group className="mb-3" controlId="formBasicName">
                        
-                        <Form.Control size="lg" type="name" placeholder=" Name" />
+                        <Form.Control size="lg" type="name" placeholder=" Name" required/>
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicPhone">                 
-                       <Form.Control size="lg" type="phone" placeholder=" Phone" />
+                       <Form.Control size="lg" type="phone" placeholder=" Phone" required/>
                     </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Control onBlur={handleEmailSignIn} size="lg" type="email" placeholder=" Email" />
+                    <Form.Control onBlur={handleEmailSignIn} size="lg" type="email" placeholder=" Email" required/>
                 </Form.Group>
 
                 <Form.Group onBlur={handleEmailPassword} className="mb-3" controlId="formBasicPassword">
-                    <Form.Control size="lg" type="password" placeholder="Password" />
+                    <Form.Control size="lg" type="password" placeholder="Password" required/>
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Control size="lg" type="password" placeholder="Confirm Password" />
+                    <Form.Control size="lg" type="password" placeholder="Confirm Password" required/>
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicCheckbox">
                     <Form.Check type="checkbox" label="Check me out" />

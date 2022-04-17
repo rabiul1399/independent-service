@@ -5,6 +5,10 @@ import './SocialLogin.css';
 
 
 const SocialLogin = () => {
+
+ 
+
+
     return (
         <div>
 

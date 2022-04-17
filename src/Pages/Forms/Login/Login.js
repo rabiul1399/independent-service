@@ -8,8 +8,11 @@ import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth'
 const Login = () => {
     const emailRef=useRef();
     const passwordRef = useRef();
-    const navigate = useNavigate()
+    let navigate = useNavigate()
     let errorElement ;
+    let location = useLocation();
+    let from = location.state?.from?.pathname || "/";
+
 
     const [
         signInWithEmailAndPassword,
@@ -24,14 +27,12 @@ const Login = () => {
       }
 
       if (user) {
-        navigate('/home')
+        navigate(from, { replace: true });
        }
 
-    // let navigate = useNavigate();
-    // let location = useLocation();
-  
-    // let from = location.state?.from?.pathname || "/";
 
+  
+  
     // navigate(from, { replace: true });
     const handleSubmit=event=>{
         event.preventDefault();
@@ -40,7 +41,7 @@ const Login = () => {
 
         signInWithEmailAndPassword(email, password)
 
-        // navigate(from, { replace: true });
+       
 
     }
 
