@@ -1,9 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import SocialLogin from '../SocialLogin/SocialLogin';
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import auth from '../../../firebase.init';
+
 
 const Register = () => {
+    const [email, setEmail] = useState('');
+
+    const [
+        createUserWithEmailAndPassword,
+        user,
+        loading,
+        error,
+      ] = useCreateUserWithEmailAndPassword(auth);
+
+
+
+
+      const handleEmailSignIn = event =>{
+          const email = event.target.value;
+          console.log(email);
+
+      }
+
+
     return (
         <div className=' w-50 mx-auto mt-5'>
         <h3 className='text-center'> This is Login</h3>
@@ -11,7 +33,7 @@ const Register = () => {
 
         <div className=''>
 
-            <Form>
+            <Form >
             <Form.Group className="mb-3" controlId="formBasicName">
                        
                         <Form.Control size="lg" type="name" placeholder=" Name" />
@@ -20,7 +42,7 @@ const Register = () => {
                        <Form.Control size="lg" type="phone" placeholder=" Phone" />
                     </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Control size="lg" type="email" placeholder=" Email" />
+                    <Form.Control onClick={handleEmailSignIn} size="lg" type="email" placeholder=" Email" />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
