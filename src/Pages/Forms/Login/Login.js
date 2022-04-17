@@ -1,11 +1,31 @@
 import React, { useRef } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import auth from '../../../firebase.init';
 import SocialLogin from '../SocialLogin/SocialLogin';
+import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth'
 
 const Login = () => {
     const emailRef=useRef();
     const passwordRef = useRef();
+    const navigate = useNavigate()
+    let errorElement ;
+
+    const [
+        signInWithEmailAndPassword,
+        user,
+        loading,
+        error,
+      ] = useSignInWithEmailAndPassword(auth);
+
+      if (error) {
+        errorElement = <p>Error : {error.message} </p>;
+     
+      }
+
+      if (user) {
+        navigate('/home')
+       }
 
     // let navigate = useNavigate();
     // let location = useLocation();
@@ -18,7 +38,7 @@ const Login = () => {
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
 
-
+        signInWithEmailAndPassword(email, password)
 
         // navigate(from, { replace: true });
 
@@ -35,11 +55,14 @@ const Login = () => {
                 
                     <Form.Group className="mb-3" controlId="formBasicEmail">                 
                       <Form.Control ref={emailRef} size="lg" type="email" placeholder="Enter 
-                        Email" />
+                        Email" required />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicPassword">
-                        <Form.Control ref={passwordRef} size="lg" type="password" placeholder="Password" />
+                        <Form.Control ref={passwordRef} size="lg" type="password" placeholder="Password" required/>
                     </Form.Group>
+                   <p className='text-danger'>
+                   {errorElement}
+                   </p>
                     <Button size="lg" variant="primary w-50 mx-auto d-block" type="submit">
                     Login
                 </Button>
