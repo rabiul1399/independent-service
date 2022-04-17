@@ -3,7 +3,8 @@ import Header from './Pages/Home/Header/Header';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Route, Routes } from 'react-router-dom';
 import Home from './Pages/Home/Home/Home';
-import Detailes from './Pages/Home/Customer/Detailes/Detailes';
+import CustomerReview from './Pages/Reviews/CustomerReview/CustomerReview';
+import Details from './Pages/Reviews/Detailes/Details';
 
 
 function App() {
@@ -13,7 +14,8 @@ function App() {
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/home' element={<Home></Home>}></Route>
-        <Route path='/details' element={<Detailes></Detailes>}></Route>
+        <Route path='/details' element={<Details></Details>}></Route>
+
        
        
 
