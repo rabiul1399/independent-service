@@ -8,6 +8,7 @@ import auth from '../../../firebase.init';
 
 const Register = () => {
     const [email, setEmail] = useState('');
+    const [password,setPassword] = useState('');
 
     const [
         createUserWithEmailAndPassword,
@@ -20,11 +21,19 @@ const Register = () => {
 
 
       const handleEmailSignIn = event =>{
-          const email = event.target.value;
-          console.log(email);
+        setEmail(event.target.value);
+         
 
       }
+      const handleEmailPassword = event =>{
+        setPassword(event.target.value);
+      }
+      const handleSubmit = event =>{
+          event.preventDefault()
 
+
+
+      }
 
     return (
         <div className=' w-50 mx-auto mt-5'>
@@ -33,7 +42,7 @@ const Register = () => {
 
         <div className=''>
 
-            <Form >
+            <Form onSubmit={handleSubmit}>
             <Form.Group className="mb-3" controlId="formBasicName">
                        
                         <Form.Control size="lg" type="name" placeholder=" Name" />
@@ -42,10 +51,10 @@ const Register = () => {
                        <Form.Control size="lg" type="phone" placeholder=" Phone" />
                     </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Control onClick={handleEmailSignIn} size="lg" type="email" placeholder=" Email" />
+                    <Form.Control onBlur={handleEmailSignIn} size="lg" type="email" placeholder=" Email" />
                 </Form.Group>
 
-                <Form.Group className="mb-3" controlId="formBasicPassword">
+                <Form.Group onBlur={handleEmailPassword} className="mb-3" controlId="formBasicPassword">
                     <Form.Control size="lg" type="password" placeholder="Password" />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
