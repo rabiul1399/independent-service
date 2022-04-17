@@ -15,7 +15,6 @@ const Register = () => {
     const [
         createUserWithEmailAndPassword,
         user,
-        loading,
         error,
       ] = useCreateUserWithEmailAndPassword(auth);
 
@@ -72,6 +71,7 @@ const Register = () => {
                 <Form.Group className="mb-3" controlId="formBasicCheckbox">
                     <Form.Check type="checkbox" label="Check me out" />
                 </Form.Group>
+                {errorElement}
                 <Button size="lg" variant="primary w-50 mx-auto d-block" type="submit">
                     Submit
                 </Button>
