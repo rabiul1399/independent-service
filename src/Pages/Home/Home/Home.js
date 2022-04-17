@@ -1,6 +1,6 @@
 import React from 'react';
-import AboutMe from '../../Reviews/AboutMe/AboutMe';
 import CustomerReview from '../../Reviews/CustomerReview/CustomerReview';
+import Details from '../../Reviews/Detailes/Details';
 import Bannar from '../Banner/Bannar';
 import Footer from '../Footer/Footer';
 import Services from '../Services/Services';
@@ -11,7 +11,7 @@ const Home = () => {
             <Bannar></Bannar>
              <Services></Services>
              <CustomerReview></CustomerReview>
-             <AboutMe></AboutMe>
+             <Details></Details>
              <Footer></Footer>
             
             
