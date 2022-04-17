@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { Form, Button } from 'react-bootstrap';
+import { Form, Button, Toast } from 'react-bootstrap';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import SocialLogin from '../SocialLogin/SocialLogin';
@@ -44,6 +44,21 @@ const Login = () => {
 
     }
 
+   const  handleForgetPassword= (click)=>{
+   
+  if(click){
+        <Toast>
+    <Toast.Header>
+      <img src="holder.js/20x20?text=%20" className="rounded me-2" alt="" />
+      <strong className="me-auto">Bootstrap</strong>
+      <small>11 mins ago</small>
+    </Toast.Header>
+    <Toast.Body>Hello, world! This is a toast message.</Toast.Body>
+  </Toast>
+  }
+
+    }
+
     return (
         <div className=' w-50 mx-auto mt-5'>
             <h3 className='text-center'> This is Login</h3>
@@ -68,10 +83,12 @@ const Login = () => {
                 </Button>
                 </Form>
 
-                <p className='mt-3 fs-5'>Forget password? <Link to='/register'
+                <p className='mt-3 fs-5'>Forget password? <Link to='' onClick={handleForgetPassword}
                     className='text-primary  cursor pe-auto text-decoration-none' >Reset password</Link></p>
 
                 <p className='mt-3 fs-5'>Don't have an account?<Link to='/register' className='text-primary  cursor pe-auto text-decoration-none' >Register Now</Link></p>
+
+               
 
             </div>
         </div>

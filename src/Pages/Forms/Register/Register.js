@@ -76,7 +76,7 @@ const Register = () => {
                     Submit
                 </Button>
             </Form>
-            <p className='mt-3 fs-5'>Already have an account?<Link to='/login' className='text-primary  cursor  pe-auto text-decoration-none' >Register Now</Link></p>
+            <p className='mt-3 fs-5'>Already have an account?<Link to='/login' className='text-primary  cursor  pe-auto text-decoration-none' >Login</Link></p>
 
         </div>
     </div>
