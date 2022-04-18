@@ -4,7 +4,7 @@ import aboutMe from '../../../images/about/aboutMe.jpg';
 const Details = () => {
     return (
         <div id='aboutMe' className='container my-5'>
-            <h1 className='text-center text-success mb-5'>About Me</h1>
+            <h1 className='text-center text-primary mb-5'>About my Fitness Mate</h1>
             <div className=' row  row-cols-md-1 row-cols-lg-2'>
                 <div>
                     <img width={'500px'} height={'500px'} src={aboutMe} alt="" />
