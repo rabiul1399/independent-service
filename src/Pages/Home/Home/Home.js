@@ -9,12 +9,12 @@ const Home = () => {
     return (
         <>
             <Bannar></Bannar>
-             <Services></Services>
-             <CustomerReview></CustomerReview>
-             <Details></Details>
-             <Footer></Footer>
-            
-            
+            <Services></Services>
+            <CustomerReview></CustomerReview>
+            <Details></Details>
+            <Footer></Footer>
+
+
         </>
     );
 };
