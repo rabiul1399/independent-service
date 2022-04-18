@@ -10,18 +10,13 @@ const Register = () => {
     const [email, setEmail] = useState('');
     const [password,setPassword] = useState('');
     const navigate = useNavigate();
-    let errorElement ;
+
 
     const [
         createUserWithEmailAndPassword,
         user,
         error,
       ] = useCreateUserWithEmailAndPassword(auth, {sendEmailVerification:true});
-
-      if (error) {
-        errorElement = <p>Error : {error.message} </p>;
-     
-      }
      
       if (user) {
        navigate('/home')
@@ -65,13 +60,9 @@ const Register = () => {
                 <Form.Group onBlur={handleEmailPassword} className="mb-3" controlId="formBasicPassword">
                     <Form.Control size="lg" type="password" placeholder="Password" required/>
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Control size="lg" type="password" placeholder="Confirm Password" required/>
-                </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                    <Form.Check type="checkbox" label="Check me out" />
+                    <Form.Check type="checkbox" label="Check me out" required />
                 </Form.Group>
-                {errorElement}
                 <Button size="lg" variant="primary w-50 mx-auto d-block" type="submit">
                     Submit
                 </Button>

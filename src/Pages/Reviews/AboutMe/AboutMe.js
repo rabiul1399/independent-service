@@ -2,8 +2,12 @@ import React from 'react';
 
 const AboutMe = () => {
     return (
-       <div className=''>
-           <h2>My opnion</h2>
+       <div className='text-center'>
+           <img src="" alt="" />
+           <div>
+               <h3>My Goal</h3>
+
+           </div>
           
        </div>
     );
